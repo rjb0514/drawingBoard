@@ -13,6 +13,8 @@
 		933EEED31D0A6288004C03A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933EEED11D0A6288004C03A0 /* Main.storyboard */; };
 		933EEED51D0A6288004C03A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 933EEED41D0A6288004C03A0 /* Assets.xcassets */; };
 		933EEED81D0A6288004C03A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 933EEED61D0A6288004C03A0 /* LaunchScreen.storyboard */; };
+		9370E1841D0A7FAF00312BBE /* DrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9370E1831D0A7FAF00312BBE /* DrawingView.m */; };
+		9370E1881D0A977200312BBE /* HMBezierPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 9370E1871D0A977200312BBE /* HMBezierPath.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		933EEED41D0A6288004C03A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		933EEED71D0A6288004C03A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		933EEED91D0A6288004C03A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9370E1821D0A7FAF00312BBE /* DrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingView.h; sourceTree = "<group>"; };
+		9370E1831D0A7FAF00312BBE /* DrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingView.m; sourceTree = "<group>"; };
+		9370E1861D0A977200312BBE /* HMBezierPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBezierPath.h; sourceTree = "<group>"; };
+		9370E1871D0A977200312BBE /* HMBezierPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBezierPath.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +64,7 @@
 		933EEEC71D0A6288004C03A0 /* drawingBoard */ = {
 			isa = PBXGroup;
 			children = (
-				933EEECB1D0A6288004C03A0 /* AppDelegate.h */,
-				933EEECC1D0A6288004C03A0 /* AppDelegate.m */,
-				933EEECE1D0A6288004C03A0 /* ViewController.h */,
-				933EEECF1D0A6288004C03A0 /* ViewController.m */,
-				933EEED11D0A6288004C03A0 /* Main.storyboard */,
-				933EEED41D0A6288004C03A0 /* Assets.xcassets */,
-				933EEED61D0A6288004C03A0 /* LaunchScreen.storyboard */,
-				933EEED91D0A6288004C03A0 /* Info.plist */,
+				9370E1801D0A645600312BBE /* Class */,
 				933EEEC81D0A6288004C03A0 /* Supporting Files */,
 			);
 			path = drawingBoard;
@@ -74,9 +73,60 @@
 		933EEEC81D0A6288004C03A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				933EEED41D0A6288004C03A0 /* Assets.xcassets */,
+				933EEED61D0A6288004C03A0 /* LaunchScreen.storyboard */,
+				933EEED91D0A6288004C03A0 /* Info.plist */,
 				933EEEC91D0A6288004C03A0 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9370E17D1D0A641D00312BBE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9370E1861D0A977200312BBE /* HMBezierPath.h */,
+				9370E1871D0A977200312BBE /* HMBezierPath.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9370E17E1D0A642700312BBE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				933EEECE1D0A6288004C03A0 /* ViewController.h */,
+				933EEECF1D0A6288004C03A0 /* ViewController.m */,
+				933EEED11D0A6288004C03A0 /* Main.storyboard */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9370E1801D0A645600312BBE /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				9370E1851D0A7FB600312BBE /* View */,
+				9370E1811D0A646800312BBE /* Other */,
+				9370E17E1D0A642700312BBE /* Controller */,
+				9370E17D1D0A641D00312BBE /* Models */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
+		9370E1811D0A646800312BBE /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				933EEECB1D0A6288004C03A0 /* AppDelegate.h */,
+				933EEECC1D0A6288004C03A0 /* AppDelegate.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		9370E1851D0A7FB600312BBE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9370E1821D0A7FAF00312BBE /* DrawingView.h */,
+				9370E1831D0A7FAF00312BBE /* DrawingView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,7 +201,9 @@
 			files = (
 				933EEED01D0A6288004C03A0 /* ViewController.m in Sources */,
 				933EEECD1D0A6288004C03A0 /* AppDelegate.m in Sources */,
+				9370E1881D0A977200312BBE /* HMBezierPath.m in Sources */,
 				933EEECA1D0A6288004C03A0 /* main.m in Sources */,
+				9370E1841D0A7FAF00312BBE /* DrawingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +354,7 @@
 				933EEEDE1D0A6288004C03A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
