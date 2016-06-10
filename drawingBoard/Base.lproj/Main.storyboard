@@ -20,11 +20,27 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fsH-Nx-duD">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="清除" id="OlG-PX-JsH"/>
-                                    <barButtonItem title="返回" id="mML-06-zWi"/>
-                                    <barButtonItem title="橡皮擦" id="Fjb-hS-jul"/>
+                                    <barButtonItem title="清除" id="OlG-PX-JsH">
+                                        <connections>
+                                            <action selector="clearBtn:" destination="BYZ-38-t0r" id="nqX-Iu-x2f"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="返回" id="mML-06-zWi">
+                                        <connections>
+                                            <action selector="backBtnClick:" destination="BYZ-38-t0r" id="B7N-Nk-XqV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="橡皮擦" id="Fjb-hS-jul">
+                                        <connections>
+                                            <action selector="eraserBtnClidk:" destination="BYZ-38-t0r" id="Fxh-P8-7On"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="fKp-Ga-ECA"/>
-                                    <barButtonItem title="保存" id="jg8-DT-iHB"/>
+                                    <barButtonItem title="保存" id="jg8-DT-iHB">
+                                        <connections>
+                                            <action selector="saveBtnClick:" destination="BYZ-38-t0r" id="uEe-54-HNu"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZ9-vl-PVW" customClass="DrawingView">
@@ -98,6 +114,7 @@
                     </view>
                     <connections>
                         <outlet property="drawingView" destination="PZ9-vl-PVW" id="9cr-CK-bh1"/>
+                        <outlet property="fistBtn" destination="J3L-yH-XPa" id="c1s-fQ-DSJ"/>
                         <outlet property="slider" destination="VQf-8g-urU" id="FGP-zp-W8B"/>
                     </connections>
                 </viewController>

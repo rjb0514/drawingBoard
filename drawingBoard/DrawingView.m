@@ -64,6 +64,46 @@
     }];
  
 }
+#pragma mark - 上部视图按钮的点击事件
+//MARK:清除
+- (void)clear {
+    [self.pathArray removeAllObjects];
+    //重绘
+    [self setNeedsDisplay];
+
+}
+//返回
+- (void) back {
+    [self.pathArray removeLastObject];
+    //重绘
+    [self setNeedsDisplay];
+    
+}
+//橡皮擦
+- (void) eraser {
+    //让画笔的颜色为视图背景颜色
+    self.col = self.backgroundColor;
+}
+//保存
+- (void) save {
+    //开启图形图文上下文
+    UIGraphicsBeginImageContext(self.bounds.size);
+    //获取上下文
+    CGContextRef cxtRef = UIGraphicsGetCurrentContext();
+    //把视图渲染上去
+    [self.layer renderInContext:cxtRef];
+    //获取图片
+    UIImage *clipImage = UIGraphicsGetImageFromCurrentImageContext();
+    //关闭上下文
+    UIGraphicsEndPDFContext();
+    //把图片存到相册  让代理去工作
+//    UIImageWriteToSavedPhotosAlbum(clipImage, nil, nil, nil);
+    if ([self.delegate respondsToSelector:@selector(saveBtnDidClick:didFish:)]) {
+        [self.delegate saveBtnDidClick:self didFish:clipImage];
+    }
+    
+
+}
 #pragma makr - 懒加载
 //- (UIBezierPath *)path {
 //    if (_path == nil) {
